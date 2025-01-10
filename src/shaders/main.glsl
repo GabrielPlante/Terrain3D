@@ -362,7 +362,7 @@ void fragment() {
 
 	// Setting this here, instead of after the branch appears to be ~10% faster.
 	// Likley as flat derivatives seem more cache friendly for texture lookups.
-	if (enable_projection) {
+	if (enable_projection && v_region.z > -1) {
 		base_derivatives *= 1.0 + (1.0 - w_normal.y);
 	}
 
